@@ -1,0 +1,14 @@
+name: Validate skill data
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 skills/design-ui-ux/scripts/validate_data.py
+      - run: python3 skills/design-ui-ux/scripts/search.py "keyboard focus modal" --domain ux

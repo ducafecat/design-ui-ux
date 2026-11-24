@@ -1,0 +1,17 @@
+{
+  "name": "ducafe-skills-design-ui-ux",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent skill for UI/UX design with real template references, style interviews, and self-contained HTML + Tailwind prototypes.",
+  "keywords": [
+    "agent-skills",
+    "ui-design",
+    "ux-design",
+    "tailwindcss",
+    "html-prototype",
+    "design-system"
+  ],
+  "scripts": {
+    "check": "python3 skills/design-ui-ux/scripts/validate_data.py"
+  }
+}
