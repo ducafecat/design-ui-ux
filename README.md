@@ -4,7 +4,7 @@
 
 为需要移动端或 PC 端界面设计的开发者和产品团队提供一套可执行的 **UI/UX 设计 Agent Skill**：从真实模板参考、逐题风格访谈，到自包含 HTML + Tailwind 设计稿与浏览器验收。
 
-默认交付 `design/index.html`，将业务视图、交互、素材和样式标准内置到一个文件中。项目处于初始整理阶段；尚未发布远程仓库，也不宣称已上架技能目录或通过跨客户端验证。
+默认交付 `design/index.html`，将业务视图、交互、素材和样式标准内置到一个文件中。项目处于初始整理阶段；技能目录上架情况与完整流程的跨客户端兼容性尚未验证。
 
 ## 工作流程
 
@@ -18,17 +18,23 @@
 
 ## 安装到项目
 
-本仓库包含一个技能：[design-ui-ux](skills/design-ui-ux/SKILL.md)。在已取得仓库副本的目录运行：
+本仓库包含一个技能：[design-ui-ux](skills/design-ui-ux/SKILL.md)。在目标项目根目录运行：
 
 ```bash
-mkdir -p /absolute/path/to/your-project/.agents/skills
-cp -R skills/design-ui-ux /absolute/path/to/your-project/.agents/skills/
+npx skills add ducafecat/design-ui-ux --skill design-ui-ux
 ```
 
-将 `/absolute/path/to/your-project` 替换为目标项目路径；若目标目录已存在该技能，先备份并比较后更新。让支持 Agent Skills 的客户端读取 `.agents/skills/design-ui-ux/SKILL.md`；具体自动发现规则由客户端决定。本仓库提供目录结构，未保证所有客户端即装即用。
+按提示选择要安装到的 Agent，默认安装到当前项目。如需全局安装，让多个项目共用此技能：
+
+```bash
+npx skills add ducafecat/design-ui-ux --skill design-ui-ux -g
+```
+
+安装完成后，在所选 Agent 中使用 `design-ui-ux`。具体安装路径与发现规则由客户端决定；完整设计流程的跨客户端兼容性尚未验证。CLI 选项与环境要求见 [Skills CLI 文档](https://github.com/vercel-labs/skills#install-a-skill)。
 
 ### 环境要求
 
+- 安装需要 Node.js 22.20 或更高版本（包含 npm / npx）；最终 HTML 成品不需要 Node.js。
 - 本地数据检索使用 Python 3，仅依赖标准库；无 Python 时可沿用详细规范，但不能声称完成检索。
 - 完整设计流程需要浏览器、真实截图和本地 HTML 预览能力；默认优先 Ego Lite，需另行配置 `ego-browser` 技能。不可用时按技能规则说明并使用替代浏览器。
 - 制作阶段需要可编译 Tailwind 的工具；最终成品应不依赖 Node.js、CDN 或运行时构建。
@@ -70,6 +76,6 @@ python3 skills/design-ui-ux/scripts/validate_data.py
 
 ## 反馈、维护与许可
 
-提交改进前阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，版本记录见 [CHANGELOG.md](CHANGELOG.md)，敏感问题见 [SECURITY.md](SECURITY.md)。远程仓库建立后使用其 Issues 反馈可复现问题。
+提交改进前阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，版本记录见 [CHANGELOG.md](CHANGELOG.md)，敏感问题见 [SECURITY.md](SECURITY.md)。通过 [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues) 反馈可复现问题。
 
 当前未指定项目许可证，不能据此认定为已授权的开源项目。发布前需由维护者确认代码与数据的来源、再分发权及许可证；数据中的来源记录不等于再分发授权。参见 [来源说明](NOTICE.md)。

@@ -4,7 +4,7 @@ English | [简体中文](README.md)
 
 An Agent Skill for developers and product teams creating mobile or desktop UI/UX prototypes. It combines real template references, step-by-step style interviews, and a self-contained HTML + Tailwind deliverable.
 
-The default output is `design/index.html`, containing business views, interactions, embedded assets, and a style guide. This repository is in initial preparation: no remote publication, catalog listing, or cross-client compatibility is claimed.
+The default output is `design/index.html`, containing business views, interactions, embedded assets, and a style guide. This repository is in initial preparation; catalog listing and cross-client compatibility of the full workflow have not been verified.
 
 ## Workflow
 
@@ -18,14 +18,23 @@ Small changes follow existing conventions. Users can explicitly skip reference s
 
 ## Install into a project
 
-From a local copy of this repository:
+Run from your target project's root:
 
 ```bash
-mkdir -p /absolute/path/to/your-project/.agents/skills
-cp -R skills/design-ui-ux /absolute/path/to/your-project/.agents/skills/
+npx skills add ducafecat/design-ui-ux --skill design-ui-ux
 ```
 
-Replace the destination path. Back up and compare any existing installation before updating. Ask an Agent Skills-capable client to read `.agents/skills/design-ui-ux/SKILL.md`. Discovery rules vary by client; universal compatibility has not been tested.
+Follow the prompts to choose your coding agent. Skills are installed into the current project by default. To make the skill available across projects, install globally:
+
+```bash
+npx skills add ducafecat/design-ui-ux --skill design-ui-ux -g
+```
+
+After installation, use `design-ui-ux` in your selected agent. Installation paths and discovery rules vary by client; cross-client compatibility of the full design workflow has not been verified. See the [Skills CLI documentation](https://github.com/vercel-labs/skills#install-a-skill) for options and requirements.
+
+### Requirements
+
+Installation requires Node.js 22.20 or later, including npm / npx. The final HTML deliverable does not require Node.js.
 
 Python 3 is needed for optional local search and uses only the standard library. The full workflow needs browser automation, screenshots, and local HTML preview. Ego Lite is preferred and requires a separately configured `ego-browser` skill; the workflow describes fallback behavior. Tailwind compilation is needed during authoring; final HTML should require no Node.js, CDN, or runtime build.
 
@@ -60,4 +69,4 @@ Search returns candidate recommendations. Validation checks data integrity; neit
 - [GitHub publication metadata](docs/github-metadata.md)
 - [Contributing](CONTRIBUTING.md), [changelog](CHANGELOG.md), [security](SECURITY.md)
 
-Once a remote repository exists, use its Issues for reproducible feedback. No project license has been selected. Do not assume an open-source grant: the maintainer must confirm code/data provenance, redistribution rights, and licensing before publication. See [NOTICE.md](NOTICE.md).
+Report reproducible issues through [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues). No project license has been selected. Do not assume an open-source grant: the maintainer must confirm code/data provenance, redistribution rights, and licensing before publication. See [NOTICE.md](NOTICE.md).
