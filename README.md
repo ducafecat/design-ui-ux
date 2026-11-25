@@ -2,77 +2,97 @@
 
 [English](README.en.md) | 简体中文
 
-为需要移动端或 PC 端界面设计的开发者和产品团队提供一套可执行的 **UI/UX 设计 Agent Skill**：从真实模板参考、逐题风格访谈，到自包含 HTML + Tailwind 设计稿与浏览器验收。
+## 安装
 
-默认交付 `design/index.html`，将业务视图、交互、素材和样式标准内置到一个文件中。项目处于初始整理阶段；技能目录上架情况与完整流程的跨客户端兼容性尚未验证。
-
-## 工作流程
-
-1. 明确业务、目标端和页面范围。
-2. 考察至少 5 个模板来源，每轮展示 6 张真实截图，交付 `design/preview.html`。
-3. 选中参考后逐题访谈，确认风格方案。
-4. 制作单文件 HTML，内嵌编译后的 Tailwind CSS、脚本、素材及样式标准。
-5. 在独立目录中以 `file://` 验证，记录实际检查与限制。
-
-局部修改沿用现有规范；用户可以明确跳过参考选择或访谈阶段。
-
-## 安装到项目
-
-本仓库包含一个技能：[design-ui-ux](skills/design-ui-ux/SKILL.md)。在目标项目根目录运行：
+npx 方式安装，建议项目级别安装。
 
 ```bash
-npx skills add ducafecat/design-ui-ux --skill design-ui-ux
+npx skills add ducafecat/design-ui-ux
 ```
 
-按提示选择要安装到的 Agent，默认安装到当前项目。如需全局安装，让多个项目共用此技能：
+## 使用流程
+
+### 1、自动搜索设计方向
+
+最好你先写一个产品的 PRD ，这样目标性强。
+
+提示词
 
 ```bash
-npx skills add ducafecat/design-ui-ux --skill design-ui-ux -g
+/design-ui-ux 编写 小红书移动端
+
+参考
+docs/prd.md
 ```
 
-安装完成后，在所选 Agent 中使用 `design-ui-ux`。具体安装路径与发现规则由客户端决定；完整设计流程的跨客户端兼容性尚未验证。CLI 选项与环境要求见 [Skills CLI 文档](https://github.com/vercel-labs/skills#install-a-skill)。
+![自动搜索设计方向](https://files.ducafecat.com/docs/2026/11/25/1795618228981.png)
 
-### 环境要求
+### 2、选择设计方向
+
+如果没有你喜欢的提示词
+
+```bash
+再换一批
+```
+
+![选择设计方向](https://files.ducafecat.com/docs/2026/11/25/1795618428611.png)
+
+### 3、设计稿落地
+
+<img src="https://files.ducafecat.com/docs/2026/11/25/1795618786169.png" alt="提示" style="zoom: 50%;" />
+
+提示词输入参考编号
+
+```bash
+B2
+```
+
+确认设计感觉
+
+<img src="https://files.ducafecat.com/docs/2026/11/25/1795619134358.png" alt="设计感觉" style="zoom:50%;" />
+
+提示词
+
+```bash
+1
+```
+
+输出 design/index.html
+
+<img src="https://files.ducafecat.com/docs/2026/11/25/1795620741606.png" alt="设计稿落地"  />
+
+### 4、平铺设计稿
+
+提示词
+
+```bash
+将设计稿 design/index.html，平铺保存到 design/平铺.html
+```
+
+输出 design/平铺.html
+
+![设计稿平铺](https://files.ducafecat.com/docs/2026/11/25/1795620965224.png)
+
+### 5、更多玩法
+
+可以让 AI 出 4 个首页设计稿
+
+提示
+
+```bash
+1 2 3 4 各出一个首页设计，保存到 design/compare.html
+```
+
+输出 design/compare.html
+
+![image-20261125231858298](https://files.ducafecat.com/docs/2026/11/25/1795619938511.png)
+
+## 环境要求
 
 - 安装需要 Node.js 22.20 或更高版本（包含 npm / npx）；最终 HTML 成品不需要 Node.js。
 - 本地数据检索使用 Python 3，仅依赖标准库；无 Python 时可沿用详细规范，但不能声称完成检索。
 - 完整设计流程需要浏览器、真实截图和本地 HTML 预览能力；默认优先 Ego Lite，需另行配置 `ego-browser` 技能。不可用时按技能规则说明并使用替代浏览器。
 - 制作阶段需要可编译 Tailwind 的工具；最终成品应不依赖 Node.js、CDN 或运行时构建。
-
-## 使用示例
-
-在已加载此技能的 Agent 中输入：
-
-> 使用 design-ui-ux，为健身课程预约产品设计移动端界面，包含课程列表、详情和预约结果，默认输出到 design/。
-
-预期先得到需求摘要和参考选型页；选定参考并确认风格后得到 `design/index.html`，其中有样式标准入口。此仓库提供技能与检索数据，不包含预先制作的健身 App 或真实预约后端。
-
-局部修改示例：
-
-> 使用 design-ui-ux，检查现有 design/index.html 的表单间距和键盘焦点，沿用现有视觉风格修复。
-
-## 本地检索与检查
-
-从仓库根目录执行：
-
-```bash
-python3 skills/design-ui-ux/scripts/search.py "keyboard focus modal" --domain ux
-python3 skills/design-ui-ux/scripts/search.py "responsive form navigation" --stack html-tailwind
-python3 skills/design-ui-ux/scripts/validate_data.py
-```
-
-前两条返回候选设计建议；最后一条检查数据完整性。它们不会验证实际生成页面的视觉或交互质量。详细规则见[检索指南](skills/design-ui-ux/references/search-guide.md)。
-
-## 目录与文档
-
-| 路径 | 内容 |
-| --- | --- |
-| [SKILL.md](skills/design-ui-ux/SKILL.md) | 激活条件、工作流程与交付要求 |
-| [设计规范](skills/design-ui-ux/references/design-standards.md) | 视觉、交互、无障碍与目标端规范 |
-| [访谈问题库](skills/design-ui-ux/references/style-interview.md) | 参考选定后的逐题访谈 |
-| `skills/design-ui-ux/scripts/` | Python 检索与数据检查 |
-| `skills/design-ui-ux/data/` | 风格、颜色、字体及交互参考数据 |
-| [GitHub 发布配置](docs/github-metadata.md) | About、Topics 与发布检查 |
 
 ## 反馈、维护与许可
 

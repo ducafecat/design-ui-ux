@@ -2,71 +2,100 @@
 
 English | [简体中文](README.md)
 
-An Agent Skill for developers and product teams creating mobile or desktop UI/UX prototypes. It combines real template references, step-by-step style interviews, and a self-contained HTML + Tailwind deliverable.
+## Installation
 
-The default output is `design/index.html`, containing business views, interactions, embedded assets, and a style guide. This repository is in initial preparation; catalog listing and cross-client compatibility of the full workflow have not been verified.
-
-## Workflow
-
-1. Define the product, target device, and page scope.
-2. Review at least five template sources and present six real screenshots in `design/preview.html` per round.
-3. Select a reference, interview one question at a time, and confirm the style.
-4. Build one HTML file with compiled Tailwind CSS, scripts, assets, and a style guide embedded.
-5. Verify the file in an isolated directory using `file://`, recording checks and limitations.
-
-Small changes follow existing conventions. Users can explicitly skip reference selection or interviews.
-
-## Install into a project
-
-Run from your target project's root:
+Install with npx. Project-level installation is recommended.
 
 ```bash
-npx skills add ducafecat/design-ui-ux --skill design-ui-ux
+npx skills add ducafecat/design-ui-ux
 ```
 
-Follow the prompts to choose your coding agent. Skills are installed into the current project by default. To make the skill available across projects, install globally:
+## Usage workflow
 
-```bash
-npx skills add ducafecat/design-ui-ux --skill design-ui-ux -g
+### 1. Automatically search for design directions
+
+Start with a product requirements document (PRD) to give the design a clear focus.
+
+Prompt:
+
+```text
+/design-ui-ux Create a mobile UI for Xiaohongshu
+
+Reference:
+docs/prd.md
 ```
 
-After installation, use `design-ui-ux` in your selected agent. Installation paths and discovery rules vary by client; cross-client compatibility of the full design workflow has not been verified. See the [Skills CLI documentation](https://github.com/vercel-labs/skills#install-a-skill) for options and requirements.
+![Automatically search for design directions](https://files.ducafecat.com/docs/2026/11/25/1795618228981.png)
 
-### Requirements
+### 2. Choose a design direction
 
-Installation requires Node.js 22.20 or later, including npm / npx. The final HTML deliverable does not require Node.js.
+If none of the options appeal to you, use this prompt:
 
-Python 3 is needed for optional local search and uses only the standard library. The full workflow needs browser automation, screenshots, and local HTML preview. Ego Lite is preferred and requires a separately configured `ego-browser` skill; the workflow describes fallback behavior. Tailwind compilation is needed during authoring; final HTML should require no Node.js, CDN, or runtime build.
-
-## Example
-
-> Use design-ui-ux to design a mobile fitness booking interface with a course list, details, and booking result. Save outputs in design/.
-
-Expect a requirements summary and reference preview first; after selection and style confirmation, expect `design/index.html` with an embedded style guide. No finished fitness app or booking backend is included.
-
-For a small change:
-
-> Use design-ui-ux to fix form spacing and keyboard focus in design/index.html, following its existing style.
-
-## Search and validation
-
-Run from this repository root:
-
-```bash
-python3 skills/design-ui-ux/scripts/search.py "keyboard focus modal" --domain ux
-python3 skills/design-ui-ux/scripts/search.py "responsive form navigation" --stack html-tailwind
-python3 skills/design-ui-ux/scripts/validate_data.py
+```text
+Show me another batch
 ```
 
-Search returns candidate recommendations. Validation checks data integrity; neither verifies a generated interface. The skill instructions and detailed references are currently written in Chinese.
+![Choose a design direction](https://files.ducafecat.com/docs/2026/11/25/1795618428611.png)
 
-## Documentation and maintenance
+### 3. Build the design
 
-- [Skill instructions](skills/design-ui-ux/SKILL.md)
-- [Design standards](skills/design-ui-ux/references/design-standards.md)
-- [Style interview](skills/design-ui-ux/references/style-interview.md)
-- [Search guide](skills/design-ui-ux/references/search-guide.md)
-- [GitHub publication metadata](docs/github-metadata.md)
-- [Contributing](CONTRIBUTING.md), [changelog](CHANGELOG.md), [security](SECURITY.md)
+<img src="https://files.ducafecat.com/docs/2026/11/25/1795618786169.png" alt="Reference selection prompt" style="zoom: 50%;" />
 
-Report reproducible issues through [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues). No project license has been selected. Do not assume an open-source grant: the maintainer must confirm code/data provenance, redistribution rights, and licensing before publication. See [NOTICE.md](NOTICE.md).
+Enter the reference ID as your prompt:
+
+```text
+B2
+```
+
+Confirm the look and feel:
+
+<img src="https://files.ducafecat.com/docs/2026/11/25/1795619134358.png" alt="Look and feel" style="zoom:50%;" />
+
+Prompt:
+
+```text
+1
+```
+
+Output: `design/index.html`
+
+<img src="https://files.ducafecat.com/docs/2026/11/25/1795620741606.png" alt="Completed design" />
+
+### 4. Lay out the design views side by side
+
+Prompt:
+
+```text
+Arrange the views from design/index.html side by side and save them to design/平铺.html
+```
+
+Output: `design/平铺.html`
+
+![Design views laid out side by side](https://files.ducafecat.com/docs/2026/11/25/1795620965224.png)
+
+### 5. Explore more variations
+
+You can ask AI to create four homepage designs.
+
+Prompt:
+
+```text
+Create one homepage design for each of options 1, 2, 3, and 4, and save them to design/compare.html
+```
+
+Output: `design/compare.html`
+
+![Four homepage design variations](https://files.ducafecat.com/docs/2026/11/25/1795619938511.png)
+
+## Requirements
+
+- Installation requires Node.js 22.20 or later, including npm / npx. The final HTML deliverable does not require Node.js.
+- Local data search uses Python 3 and only the standard library. Without Python, you can still follow the detailed guidelines, but must not claim to have completed the search.
+- The full design workflow requires a browser, real screenshots, and local HTML preview. Ego Lite is preferred by default and requires the `ego-browser` skill to be configured separately. If unavailable, explain the limitation and use an alternative browser according to the skill instructions.
+- Authoring requires a tool that can compile Tailwind. The final deliverable should require no Node.js, CDN, or runtime build.
+
+## Feedback, maintenance, and licensing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting improvements. See [CHANGELOG.md](CHANGELOG.md) for version history and [SECURITY.md](SECURITY.md) for sensitive issues. Report reproducible problems through [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues).
+
+No project license has been specified, so do not assume an open-source license grant. Before publication, the maintainer must confirm the provenance, redistribution rights, and licensing of the code and data. Source records in the data do not constitute redistribution permission. See the [provenance notice](NOTICE.md).
