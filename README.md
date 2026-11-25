@@ -2,6 +2,10 @@
 
 [English](README.en.md) | 简体中文
 
+[猫哥Flutter视频学习站](https://ducafecat.com/)
+
+[Flutter插件站](https://flutter.ducafecat.com/)
+
 ## 安装
 
 npx 方式安装，建议项目级别安装。
