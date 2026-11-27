@@ -1,6 +1,6 @@
 # Design UI UX — AI Agent Skill for HTML + Tailwind Prototypes
 
-English | [简体中文](README.md)
+English | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md)
 
 Build UI/UX prototypes with HTML + Tailwind. Start with design references, choose a style, and create pages you can preview in your browser.
 
@@ -25,7 +25,7 @@ Reference:
 docs/prd.md
 ```
 
-![Automatically search for design directions](https://files.ducafecat.com/docs/2026/11/25/1795618228981.png)
+![Automatically search for design directions](images/1795618228981.png)
 
 ### 2. Choose a design direction
 
@@ -35,11 +35,11 @@ Pick a direction from the results. If none feel right, ask for more:
 Show me another batch
 ```
 
-![Choose a design direction](https://files.ducafecat.com/docs/2026/11/25/1795618428611.png)
+![Choose a design direction](images/1795618428611.png)
 
 ### 3. Create the prototype
 
-<img src="https://files.ducafecat.com/docs/2026/11/25/1795618786169.png" alt="Reference selection prompt" style="zoom: 50%;" />
+<img src="images/1795618786169.png" alt="Reference selection prompt" style="zoom: 50%;" />
 
 Enter the ID of your chosen reference, for example:
 
@@ -49,7 +49,7 @@ B2
 
 Next, choose from the suggested styles:
 
-<img src="https://files.ducafecat.com/docs/2026/11/25/1795619134358.png" alt="Look and feel" style="zoom:50%;" />
+<img src="images/1795619134358.png" alt="Look and feel" style="zoom:50%;" />
 
 For example, select option 1:
 
@@ -59,7 +59,7 @@ For example, select option 1:
 
 The prototype is saved to `design/index.html`. Open it in your browser to preview it.
 
-<img src="https://files.ducafecat.com/docs/2026/11/25/1795620741606.png" alt="Completed design" />
+<img src="images/1795620741606.png" alt="Completed design" />
 
 ### 4. View the pages side by side
 
@@ -71,7 +71,7 @@ Arrange the views from design/index.html side by side and save them to design/�
 
 The result is saved to `design/平铺.html`:
 
-![Design views laid out side by side](https://files.ducafecat.com/docs/2026/11/25/1795620965224.png)
+![Design views laid out side by side](images/1795620965224.png)
 
 ### 5. Compare designs
 
@@ -83,7 +83,7 @@ Create one homepage design for each of options 1, 2, 3, and 4, and save them to 
 
 The result is saved to `design/compare.html`:
 
-![Four homepage design variations](https://files.ducafecat.com/docs/2026/11/25/1795619938511.png)
+![Four homepage design variations](images/1795619938511.png)
 
 ## Requirements
 

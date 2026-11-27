@@ -1,103 +1,99 @@
 # Design UI UX — AI Agent Skill for HTML + Tailwind Prototypes
 
-[English](README.en.md) | 简体中文
+English | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md)
 
-用 HTML + Tailwind 制作 UI/UX 原型。从查找设计参考、选择风格，到生成可在浏览器中预览的页面，按下面的步骤就能开始。
+Build UI/UX prototypes with HTML + Tailwind. Start with design references, choose a style, and create pages you can preview in your browser.
 
-[猫哥Flutter视频学习站](https://ducafecat.com/)
+## Installation
 
-[Flutter插件站](https://flutter.ducafecat.com/)
-
-## 安装
-
-通过 npx 安装，建议安装到当前项目：
+Install with npx, preferably in your project:
 
 ```bash
 npx skills add ducafecat/design-ui-ux
 ```
 
-## 使用流程
+## How to use
 
-### 1、查找设计参考
+### 1. Find design references
 
-建议先准备一份产品需求文档（PRD），说明要做什么、给谁用、需要哪些页面。然后输入：
+Prepare a product requirements document (PRD) describing what you want to build, who it is for, and which pages you need. Then enter:
 
 ```text
-/design-ui-ux 设计一个小红书风格的移动端界面
+/design-ui-ux Design a Xiaohongshu-style mobile UI
 
-参考
+Reference:
 docs/prd.md
 ```
 
-![自动搜索设计方向](images/1795618228981.png)
+![Automatically search for design directions](images/1795618228981.png)
 
-### 2、选择设计方向
+### 2. Choose a design direction
 
-从搜索结果中挑选喜欢的方向。如果这一批都不合适，可以继续输入：
+Pick a direction from the results. If none feel right, ask for more:
 
 ```text
-再换一批
+Show me another batch
 ```
 
-![选择设计方向](images/1795618428611.png)
+![Choose a design direction](images/1795618428611.png)
 
-### 3、生成设计稿
+### 3. Create the prototype
 
-<img src="images/1795618786169.png" alt="提示" style="zoom: 50%;" />
+<img src="images/1795618786169.png" alt="Reference selection prompt" style="zoom: 50%;" />
 
-输入选中的参考编号，例如：
+Enter the ID of your chosen reference, for example:
 
 ```text
 B2
 ```
 
-接下来会给出具体的风格选项，选一个符合预期的：
+Next, choose from the suggested styles:
 
-<img src="images/1795619134358.png" alt="设计感觉" style="zoom:50%;" />
+<img src="images/1795619134358.png" alt="Look and feel" style="zoom:50%;" />
 
-例如，选择第 1 项：
+For example, select option 1:
 
 ```text
 1
 ```
 
-确认后，设计稿会保存到 `design/index.html`，可在浏览器中打开预览。
+The prototype is saved to `design/index.html`. Open it in your browser to preview it.
 
-<img src="images/1795620741606.png" alt="设计稿落地"  />
+<img src="images/1795620741606.png" alt="Completed design" />
 
-### 4、平铺设计稿
+### 4. View the pages side by side
 
-想把各个页面放在一起查看，可以输入：
-
-```text
-将设计稿 design/index.html，平铺保存到 design/平铺.html
-```
-
-结果保存到 `design/平铺.html`：
-
-![设计稿平铺](images/1795620965224.png)
-
-### 5、对比多个方案
-
-拿不准选哪种风格时，可以让它分别做一版首页，放在一起比较：
+To see all the pages together, enter:
 
 ```text
-1 2 3 4 各出一个首页设计，保存到 design/compare.html
+Arrange the views from design/index.html side by side and save them to design/平铺.html
 ```
 
-结果保存到 `design/compare.html`：
+The result is saved to `design/平铺.html`:
 
-![四种首页设计方案](images/1795619938511.png)
+![Design views laid out side by side](images/1795620965224.png)
 
-## 环境要求
+### 5. Compare designs
 
-- 安装时需要 Node.js 22.20 或更高版本，以及 npm / npx。生成的 HTML 页面不需要 Node.js。
-- 本地数据检索需要 Python 3，无需安装第三方包。没有 Python 时，仍可按设计规范制作页面，但无法使用本地检索。
-- 查找参考和检查页面需要浏览器，支持实际截图和本地 HTML 预览。默认使用 Ego Lite，需单独配置 `ego-browser` 技能；也可按技能说明使用其他浏览器。
-- 制作页面时需要编译 Tailwind。交付前应完成编译，让最终 HTML 无需 Node.js、CDN 或运行时构建即可打开。
+If you are unsure which style to choose, try a homepage in each style and compare them:
 
-## 反馈、维护与许可
+```text
+Create one homepage design for each of options 1, 2, 3, and 4, and save them to design/compare.html
+```
 
-提交改进前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，版本记录见 [CHANGELOG.md](CHANGELOG.md)，敏感问题见 [SECURITY.md](SECURITY.md)。通过 [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues) 反馈可复现问题。
+The result is saved to `design/compare.html`:
 
-项目目前尚未指定许可证。使用或分发前，请确认相关授权；维护者也需在发布前核实代码与数据的来源、再分发权及许可证。数据中标注了来源，并不代表已获得再分发许可，详见 [来源说明](NOTICE.md)。
+![Four homepage design variations](images/1795619938511.png)
+
+## Requirements
+
+- Installation needs Node.js 22.20 or later, with npm / npx. The generated HTML pages do not need Node.js.
+- Local data search needs Python 3, with no third-party packages. Without Python, you can still build pages using the design guidelines, but local search is unavailable.
+- Finding references and checking pages needs a browser that supports screenshots and local HTML previews. Ego Lite is the default and needs the `ego-browser` skill configured separately. You can also use another browser as described in the skill instructions.
+- Tailwind needs to be compiled during development. Compile it before delivery so the final HTML opens without Node.js, a CDN, or a runtime build.
+
+## Feedback, maintenance, and licensing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting improvements. See [CHANGELOG.md](CHANGELOG.md) for version history and [SECURITY.md](SECURITY.md) for sensitive issues. Report reproducible problems through [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues).
+
+The project does not yet have a license. Check the relevant permissions before using or redistributing it. Before publishing, the maintainer needs to verify the sources, redistribution rights, and licenses for the code and data. A listed source does not, by itself, grant permission to redistribute. See the [source notice](NOTICE.md).
