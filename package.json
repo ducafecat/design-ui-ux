@@ -13,5 +13,6 @@
   ],
   "scripts": {
     "check": "python3 skills/design-ui-ux/scripts/validate_data.py"
-  }
+  },
+  "license": "MIT"
 }

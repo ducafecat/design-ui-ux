@@ -2,11 +2,11 @@
 
 English | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md)
 
-Build UI/UX prototypes with HTML + Tailwind. Start with design references, choose a style, and create pages you can preview in your browser.
+A UI/UX design skill for coding agents. Pick a reference, settle on a style, and turn your requirements into an HTML + Tailwind prototype you can open in a browser.
 
 ## Installation
 
-Install with npx, preferably in your project:
+Run this from your project folder:
 
 ```bash
 npx skills add ducafecat/design-ui-ux
@@ -16,7 +16,7 @@ npx skills add ducafecat/design-ui-ux
 
 ### 1. Find design references
 
-Prepare a product requirements document (PRD) describing what you want to build, who it is for, and which pages you need. Then enter:
+Describe what you’re building, who will use it, and which screens you need. If you have a product requirements document (PRD), include its path:
 
 ```text
 /design-ui-ux Design a Xiaohongshu-style mobile UI
@@ -29,7 +29,7 @@ docs/prd.md
 
 ### 2. Choose a design direction
 
-Pick a direction from the results. If none feel right, ask for more:
+Choose a reference you like. If nothing fits, ask for another set:
 
 ```text
 Show me another batch
@@ -41,59 +41,59 @@ Show me another batch
 
 <img src="images/1795618786169.png" alt="Reference selection prompt" style="zoom: 50%;" />
 
-Enter the ID of your chosen reference, for example:
+Reply with the reference ID, such as:
 
 ```text
 B2
 ```
 
-Next, choose from the suggested styles:
+Then choose a style:
 
 <img src="images/1795619134358.png" alt="Look and feel" style="zoom:50%;" />
 
-For example, select option 1:
+To choose the first option, reply:
 
 ```text
 1
 ```
 
-The prototype is saved to `design/index.html`. Open it in your browser to preview it.
+Once you confirm the style, the skill builds the prototype in `design/index.html`. Open the file in your browser to try it.
 
 <img src="images/1795620741606.png" alt="Completed design" />
 
 ### 4. View the pages side by side
 
-To see all the pages together, enter:
+Ask for a page that shows all screens together:
 
 ```text
 Arrange the views from design/index.html side by side and save them to design/平铺.html
 ```
 
-The result is saved to `design/平铺.html`:
+Open `design/平铺.html` to see the screens together:
 
 ![Design views laid out side by side](images/1795620965224.png)
 
 ### 5. Compare designs
 
-If you are unsure which style to choose, try a homepage in each style and compare them:
+Still deciding? Ask for a homepage in each style:
 
 ```text
 Create one homepage design for each of options 1, 2, 3, and 4, and save them to design/compare.html
 ```
 
-The result is saved to `design/compare.html`:
+Open `design/compare.html` to compare the options:
 
 ![Four homepage design variations](images/1795619938511.png)
 
 ## Requirements
 
-- Installation needs Node.js 22.20 or later, with npm / npx. The generated HTML pages do not need Node.js.
-- Local data search needs Python 3, with no third-party packages. Without Python, you can still build pages using the design guidelines, but local search is unavailable.
-- Finding references and checking pages needs a browser that supports screenshots and local HTML previews. Ego Lite is the default and needs the `ego-browser` skill configured separately. You can also use another browser as described in the skill instructions.
-- Tailwind needs to be compiled during development. Compile it before delivery so the final HTML opens without Node.js, a CDN, or a runtime build.
+- **Installation:** Node.js 22.20 or later, with npm / npx. You won’t need Node.js to view the finished HTML.
+- **Local search:** Python 3, with no extra packages. Without it, the skill can still follow the design guidelines, but can’t search the local data.
+- **Browser:** Screenshot capture and local HTML preview support. The default is Ego Lite; set up the `ego-browser` skill separately. Other browsers can be used as described in the skill instructions.
+- **Tailwind:** Compile the styles before delivery. The finished HTML should open without Node.js, a CDN, or a build step.
 
-## Feedback, maintenance, and licensing
+## Feedback and license
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting improvements. See [CHANGELOG.md](CHANGELOG.md) for version history and [SECURITY.md](SECURITY.md) for sensitive issues. Report reproducible problems through [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues).
+Found a bug? Open a [GitHub Issue](https://github.com/ducafecat/design-ui-ux/issues) with steps to reproduce it. For sensitive reports, follow [SECURITY.md](SECURITY.md). See [CONTRIBUTING.md](CONTRIBUTING.md) to contribute and [CHANGELOG.md](CHANGELOG.md) for changes.
 
-The project does not yet have a license. Check the relevant permissions before using or redistributing it. Before publishing, the maintainer needs to verify the sources, redistribution rights, and licenses for the code and data. A listed source does not, by itself, grant permission to redistribute. See the [source notice](NOTICE.md).
+This project is licensed under the [MIT License](LICENSE). Third-party code, data, fonts, images, and other assets remain subject to their respective licenses. See [NOTICE.md](NOTICE.md) for upstream attribution and source records.

@@ -2,11 +2,11 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | Français | [Deutsch](README.de.md)
 
-Créez des prototypes UI/UX avec HTML + Tailwind. Recherchez des références visuelles, choisissez un style et générez des pages à prévisualiser dans votre navigateur.
+Une compétence de design UI/UX pour les assistants de programmation. Choisissez une référence et un style, puis passez de vos besoins à un prototype HTML + Tailwind à ouvrir dans le navigateur.
 
 ## Installation
 
-Installez avec npx, de préférence dans votre projet :
+Lancez cette commande depuis le dossier du projet :
 
 ```bash
 npx skills add ducafecat/design-ui-ux
@@ -16,7 +16,7 @@ npx skills add ducafecat/design-ui-ux
 
 ### 1. Rechercher des références visuelles
 
-Préparez un document de spécifications produit (PRD) précisant le produit, son public et les écrans nécessaires. Saisissez ensuite :
+Décrivez le produit, son public et les écrans à prévoir. Si vous avez un document de spécifications (PRD), indiquez son chemin :
 
 ```text
 /design-ui-ux Crée une interface mobile dans le style de Xiaohongshu.
@@ -29,7 +29,7 @@ docs/prd.md
 
 ### 2. Choisir une direction visuelle
 
-Choisissez une proposition. Si aucune ne convient, demandez une nouvelle sélection :
+Choisissez une référence. Si aucune ne vous plaît, demandez une autre sélection :
 
 ```text
 Montre-moi une autre sélection de références.
@@ -39,17 +39,19 @@ Montre-moi une autre sélection de références.
 
 ### 3. Créer le prototype
 
-Saisissez le numéro de la référence choisie, par exemple B2. Choisissez ensuite un style parmi les options proposées, par exemple la première.
+Répondez avec le numéro de la référence, par exemple :
 
-![Sélectionnez une référence et examinez les styles proposés.](images/1795618786169.png)
+![Sélection de la référence](images/1795618786169.png)
 
 ```text
 B2
 ```
 
-![Sélectionnez une référence et examinez les styles proposés.](images/1795619134358.png)
+Choisissez ensuite un style :
 
-Exemple pour choisir la première option :
+![Choix du style](images/1795619134358.png)
+
+Pour choisir la première option, répondez :
 
 ```text
 1
@@ -61,7 +63,7 @@ Après confirmation, le prototype est enregistré dans `design/index.html`. Ouvr
 
 ### 4. Afficher les écrans côte à côte
 
-Pour examiner tous les écrans ensemble, saisissez :
+Demandez une page regroupant tous les écrans :
 
 ```text
 Dispose les vues de design/index.html côte à côte et enregistre-les dans design/平铺.html.
@@ -73,7 +75,7 @@ Fichier créé : `design/平铺.html`
 
 ### 5. Comparer plusieurs propositions
 
-Si vous hésitez entre plusieurs styles, créez une page d’accueil pour chacun et comparez-les :
+Vous hésitez encore ? Demandez une page d’accueil pour chaque style :
 
 ```text
 Crée une page d’accueil pour chacune des options 1, 2, 3 et 4, puis enregistre-les dans design/compare.html.
@@ -90,8 +92,8 @@ Fichier créé : `design/compare.html`
 - La recherche de références et la vérification des pages nécessitent un navigateur prenant en charge les captures d’écran et la prévisualisation de fichiers HTML locaux. Ego Lite est utilisé par défaut et nécessite de configurer séparément la compétence `ego-browser`. Un autre navigateur peut être utilisé selon les instructions de la compétence.
 - Tailwind doit être compilé pendant le développement. Compilez-le avant livraison afin que le HTML final s’ouvre sans Node.js, CDN ni compilation à l’exécution.
 
-## Retours, maintenance et licence
+## Retours et licence
 
 Lisez [CONTRIBUTING.md](CONTRIBUTING.md) avant de proposer des améliorations. Consultez [CHANGELOG.md](CHANGELOG.md) pour l’historique et [SECURITY.md](SECURITY.md) pour les problèmes sensibles. Signalez les problèmes reproductibles dans [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues).
 
-Le projet ne dispose pas encore de licence définie. Vérifiez les autorisations applicables avant de l’utiliser ou de le redistribuer. Avant publication, le responsable doit vérifier les sources, les droits de redistribution et les licences du code et des données. La mention d’une source ne vaut pas autorisation de redistribution. Consultez la [notice sur les sources](NOTICE.md).
+Ce projet est distribué sous [licence MIT](LICENSE). Le code, les données, les polices, les images et les autres ressources de tiers restent soumis à leurs licences respectives. Consultez [NOTICE.md](NOTICE.md) pour les crédits et les sources.
