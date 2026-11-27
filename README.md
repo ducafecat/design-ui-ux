@@ -2,13 +2,15 @@
 
 [English](README.en.md) | 简体中文
 
+用 HTML + Tailwind 制作 UI/UX 原型。从查找设计参考、选择风格，到生成可在浏览器中预览的页面，按下面的步骤就能开始。
+
 [猫哥Flutter视频学习站](https://ducafecat.com/)
 
 [Flutter插件站](https://flutter.ducafecat.com/)
 
 ## 安装
 
-npx 方式安装，建议项目级别安装。
+通过 npx 安装，建议安装到当前项目：
 
 ```bash
 npx skills add ducafecat/design-ui-ux
@@ -16,90 +18,86 @@ npx skills add ducafecat/design-ui-ux
 
 ## 使用流程
 
-### 1、自动搜索设计方向
+### 1、查找设计参考
 
-最好你先写一个产品的 PRD ，这样目标性强。
+建议先准备一份产品需求文档（PRD），说明要做什么、给谁用、需要哪些页面。然后输入：
 
-提示词
-
-```bash
-/design-ui-ux 编写 小红书移动端
+```text
+/design-ui-ux 设计一个小红书风格的移动端界面
 
 参考
 docs/prd.md
 ```
 
-![自动搜索设计方向](https://files.ducafecat.com/docs/2026/11/25/1795618228981.png)
+![自动搜索设计方向](images/1795618228981.png)
 
 ### 2、选择设计方向
 
-如果没有你喜欢的提示词
+从搜索结果中挑选喜欢的方向。如果这一批都不合适，可以继续输入：
 
-```bash
+```text
 再换一批
 ```
 
-![选择设计方向](https://files.ducafecat.com/docs/2026/11/25/1795618428611.png)
+![选择设计方向](images/1795618428611.png)
 
-### 3、设计稿落地
+### 3、生成设计稿
 
-<img src="https://files.ducafecat.com/docs/2026/11/25/1795618786169.png" alt="提示" style="zoom: 50%;" />
+<img src="images/1795618786169.png" alt="提示" style="zoom: 50%;" />
 
-提示词输入参考编号
+输入选中的参考编号，例如：
 
-```bash
+```text
 B2
 ```
 
-确认设计感觉
+接下来会给出具体的风格选项，选一个符合预期的：
 
-<img src="https://files.ducafecat.com/docs/2026/11/25/1795619134358.png" alt="设计感觉" style="zoom:50%;" />
+<img src="images/1795619134358.png" alt="设计感觉" style="zoom:50%;" />
 
-提示词
+例如，选择第 1 项：
 
-```bash
+```text
 1
 ```
 
-输出 design/index.html
+确认后，设计稿会保存到 `design/index.html`，可在浏览器中打开预览。
 
-<img src="https://files.ducafecat.com/docs/2026/11/25/1795620741606.png" alt="设计稿落地"  />
+<img src="images/1795620741606.png" alt="设计稿落地"  />
 
 ### 4、平铺设计稿
 
-提示词
+想把各个页面放在一起查看，可以输入：
 
-```bash
+```text
 将设计稿 design/index.html，平铺保存到 design/平铺.html
 ```
 
-输出 design/平铺.html
+结果保存到 `design/平铺.html`：
 
-![设计稿平铺](https://files.ducafecat.com/docs/2026/11/25/1795620965224.png)
+![设计稿平铺](images/1795620965224.png)
 
-### 5、更多玩法
+### 5、对比多个方案
 
-可以让 AI 出 4 个首页设计稿
+拿不准选哪种风格时，可以让它分别做一版首页，放在一起比较：
 
-提示
-
-```bash
+```text
 1 2 3 4 各出一个首页设计，保存到 design/compare.html
 ```
 
-输出 design/compare.html
+结果保存到 `design/compare.html`：
 
-![image-20261125231858298](https://files.ducafecat.com/docs/2026/11/25/1795619938511.png)
+![四种首页设计方案](images/1795619938511.png)
 
 ## 环境要求
 
-- 安装需要 Node.js 22.20 或更高版本（包含 npm / npx）；最终 HTML 成品不需要 Node.js。
-- 本地数据检索使用 Python 3，仅依赖标准库；无 Python 时可沿用详细规范，但不能声称完成检索。
-- 完整设计流程需要浏览器、真实截图和本地 HTML 预览能力；默认优先 Ego Lite，需另行配置 `ego-browser` 技能。不可用时按技能规则说明并使用替代浏览器。
-- 制作阶段需要可编译 Tailwind 的工具；最终成品应不依赖 Node.js、CDN 或运行时构建。
+- 安装时需要 Node.js 22.20 或更高版本，以及 npm / npx。生成的 HTML 页面不需要 Node.js。
+- 本地数据检索需要 Python 3，无需安装第三方包。没有 Python 时，仍可按设计规范制作页面，但无法使用本地检索。
+- 查找参考和检查页面需要浏览器，支持实际截图和本地 HTML 预览。默认使用 Ego Lite，需单独配置 `ego-browser` 技能；也可按技能说明使用其他浏览器。
+- 制作页面时需要编译 Tailwind。交付前应完成编译，让最终 HTML 无需 Node.js、CDN 或运行时构建即可打开。
 
 ## 反馈、维护与许可
 
-提交改进前阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，版本记录见 [CHANGELOG.md](CHANGELOG.md)，敏感问题见 [SECURITY.md](SECURITY.md)。通过 [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues) 反馈可复现问题。
+提交改进前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，版本记录见 [CHANGELOG.md](CHANGELOG.md)，敏感问题见 [SECURITY.md](SECURITY.md)。通过 [GitHub Issues](https://github.com/ducafecat/design-ui-ux/issues) 反馈可复现问题。
 
-当前未指定项目许可证，不能据此认定为已授权的开源项目。发布前需由维护者确认代码与数据的来源、再分发权及许可证；数据中的来源记录不等于再分发授权。参见 [来源说明](NOTICE.md)。
+项目目前尚未指定许可证。使用或分发前，请确认相关授权；维护者也需在发布前核实代码与数据的来源、再分发权及许可证。数据中标注了来源，并不代表已获得再分发许可，详见 [来源说明](NOTICE.md)。
